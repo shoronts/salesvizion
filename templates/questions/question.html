@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Questions{% endblock %}
+{% block css %}
+<link rel="stylesheet" href="{% static 'css/questions/questions.css' %}">
+{% endblock %}
+{% block content %}
+<section class="mt-5">
+    <div class="container py-5">
+        <h3 class="text-center">Question Page</h3>
+    </div>
+</section>
+<section class="py-5 mb-5">
+    <div class="container">
+        <h3 class="mb-5">You have total {{ totalQuestions }} Questions. They are below.</h3>
+        <form action="{% url 'question' %}" method="POST">
+            {% csrf_token %}
+            <input type="hidden" name="username" value="{{ user.username }}">
+            <ol>
+                {% for question in questions %}
+                <li>{{ question }}</li>
+                {% endfor %}
+            </ol>
+            <div class="text-center pt-5">
+                <button class="btn btn-user" type="submit">Let's answere</button>
+            </div>
+        </form>
+    </div>
+</section>
+{% endblock %}

@@ -1,0 +1,12 @@
+.errorlist{
+    padding-left: 0;
+}
+.errorlist li{
+    list-style: none;
+    color: red;
+    font-size: 14px;
+}
+h3{
+    color: #691C26;
+    font-size: 32px;
+}

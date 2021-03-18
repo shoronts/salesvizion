@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Results{% endblock %}
+{% block css %}
+<link rel="stylesheet" href="{% static 'css/questions/results.css' %}">
+{% endblock %}
+{% block content %}
+<section class="py-5">
+    <div class="container">
+        <div class="d-flex justify-content-between align-items-center">
+            <h2 class="mb-5">All Your Questions and Answeres.</h2>
+        </div>
+        <div class="py-5">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Date</th>
+                        <th scope="col">View</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <ul>
+                        {% for de in date %}
+                        {% for res in result %}
+                        <tr>
+                            <th scope="row">{{ forloop.counter }}</th>
+                            <td>{{ de }}</td>
+                            <td><a target="_blank" href="{{ res }}">view</a></td>
+                        </tr>
+                        {% endfor %}
+                    {% endfor %}
+                    </ul>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</section>
+{% endblock %}

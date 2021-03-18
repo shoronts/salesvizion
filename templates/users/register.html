@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block css %}
+<link rel="stylesheet" href="{% static 'css/users/register.css' %}">
+{% endblock %}
+{% block title %}Create Account{% endblock %}
+{% block content %}
+<section class="py-5">
+    <div class="container">
+        {% if user.is_authenticated %}
+        <h3 class="text-center py-5">You are a registered user. Please <a href="{% url 'logout' %}">logout</a> to access
+            other account. Thanks</h3>
+        {% else %}
+        <h3 class="text-center pt-5">CREATE ACCOUNT</h3>
+        <p class="text-center">By signing up, you may receive exclusive rewards via email.</p>
+        {% if messages %}
+        {% for message in messages %}
+        {% if message.level == DEFAULT_MESSAGE_LEVELS.SUCCESS %}
+        <div class="alert alert-success" role="alert">
+            <h5 class="text-center">{{ message }}</h5>
+        </div>
+        {% endif %}
+        {% if message.level == DEFAULT_MESSAGE_LEVELS.ERROR %}
+        <div class="alert alert-danger" role="alert">
+            <h5 class="text-center">{{ message }}</h5>
+        </div>
+        {% endif %}
+        {% endfor %}
+        {% endif %}
+        <form action="{% url 'register' %}" method="POST">
+            {% csrf_token %}
+            {{ form.nonfield_errors }}
+            {% if request.GET.next %}
+            <input type="hidden" name="next" value="{{ request.GET.next }}">
+            {% endif %}
+            <div class="mb-3">
+                {{ form.username }}
+                {{ form.username.errors }}
+            </div>
+        </form>
+        {% endif %}
+    </div>
+</section>
+{% endblock %}

@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Results{% endblock %}
+{% block css %}
+<link rel="stylesheet" href="{% static 'css/questions/singleresults.css' %}">
+{% endblock %}
+{% block content %}
+<section class="py-5">
+    <div class="container">
+        <div class="d-flex justify-content-between align-items-center">
+            <h3 class="text-center pb-5">All the questions and answers are below:</h3>
+            <button class="btn btn-user" onclick="window.print();">Print</button>
+        </div>
+        <div>
+            {% for res in results %}
+            {% if resultCount == res.examVersion %}
+            <div class="mb-5">
+                <h4>{{ res.question }}</h4>
+                <ol>
+                    <li>{{ res.firstAnswer }}</li>
+                    <li>{{ res.secondAnswer }}</li>
+                    <li>{{ res.thirdAnswer }}</li>
+                </ol>
+            </div>
+            {% endif %}
+            {% endfor %}
+        </div>
+    </div>
+</section>
+{% endblock %}

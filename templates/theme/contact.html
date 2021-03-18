@@ -1,0 +1,82 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Contact{% endblock %}
+{% block css %}
+<link rel="stylesheet" href="{% static 'css/theme/contact.css' %}">
+{% endblock %}
+{% block content %}
+<section class="py-5">
+    <div class="container">
+        <h3 class="text-center">Contact Us</h3>
+        <h4 class="text-center py-5">Get Started Today</h4>
+    </div>
+</section>
+<section>
+    <div class="container">
+        {% if messages %}
+            {% for message in messages %}
+                {% if message.level == DEFAULT_MESSAGE_LEVELS.SUCCESS %}
+                    <div class="alert alert-success" role="alert">
+                        <div class="text-center">
+                            <svg viewBox="0 0 24 24" fill="currentColor" width="72px" height="72px" data-ux="Icon"
+                                class="x-el x-el-svg c2-1 c2-2 c2-t c2-u c2-2d c2-9n c2-m c2-w c2-3 c2-4 c2-5 c2-6 c2-7 c2-8 x-d-ux">
+                                <path fill-rule="evenodd"
+                                    d="M12 4a8 8 0 0 1 8 8 8 8 0 0 1-8 8 8 8 0 0 1-8-8 8 8 0 0 1 8-8zm0 1.958c-3.316 0-6.014 2.71-6.014 6.042S8.684 18.042 12 18.042c3.315 0 6.013-2.71 6.013-6.042S15.315 5.958 12 5.958zm3.613 4.32l.175.19-.196.168-4.844 4.205-.182.157-.164-.174-2.315-2.437-.177-.188.193-.17 1.123-.992.185-.163.166.182 1.097 1.166 3.584-3.066.183-.155.162.177 1.01 1.1z">
+                                </path>
+                            </svg>
+                        </div>
+                        <p class="text-center">{{ message }}</p>
+                    </div>        
+                {% elif message.level == DEFAULT_MESSAGE_LEVELS.ERROR %}
+                    <div class="alert alert-danger" role="alert">
+                        <p class="text-center">{{ message }}</p>
+                    </div>
+                {% endif %}
+            {% endfor %}
+        {% else %}
+        <div class="row">
+            <div class="col-md-2"></div>
+            <div class="col-md-8">
+                <form action="{% url 'contact' %}" method="POST" novalidate>
+                    {% csrf_token %}
+                    {{ form.nonefield_errors }}
+                    <div class="mb-3">
+                        {{ form.name }}
+                        {{ form.name.errors }}
+                    </div>
+                    <div class="mb-3">
+                        {{ form.email }}
+                        {{ form.email.errors }}
+                    </div>
+                    <div class="mb-3">
+                        {{ form.url }}
+                        {{ form.url.errors }}
+                    </div>
+                    <div class="mb-3">
+                        {{ form.message }}
+                        {{ form.message.errors }}
+                    </div>
+                    <div class="text-center">
+                        <button type="submit" class="btn btn-user">send</button>
+                    </div>
+                </form>
+            </div>
+            <div class="col-md-2"></div>
+        </div>
+        {% endif %}
+    </div>
+</section>
+<section class="py-5">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-2"></div>
+            <div class="col-md-8">
+                <p class="text-center">We strive to stay in communication with our clients. Have a question about our
+                    business, or want to see if we match your specific needs? Send us a message, or give us a call.
+                    We're always happy to connect with new customers!</p>
+            </div>
+            <div class="col-md-2"></div>
+        </div>
+    </div>
+</section>
+{% endblock %}

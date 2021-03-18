@@ -1,0 +1,53 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}{{ nextQuestions.question }}{% endblock %}
+{% block css %}
+<link rel="stylesheet" href="{% static 'css/questions/allquestions.css' %}">
+{% endblock %}
+{% block content %}
+<section class="py-5">
+    <div class="container">
+        <h2 class="text-center">Please answere the below questions:</h2>
+    </div>
+</section>
+<section class="py-5 mb-5">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-7">
+                <h3 class="mb-5">{{ nextQuestions.question }}</h3>
+                <form action="{% url 'allquestion' slug=nextQuestions.slug %}" method="POST">
+                    {% csrf_token %}
+                    <input type="hidden" name="runningQues" value="{{ nextQuestions.question }}">
+                    
+                    <div class="mb-3">
+                        <label class="form-label">First Answer</label>
+                        <textarea required name="firAns" class="form-control" cols="15" rows="5"></textarea>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Second Answer</label>
+                        <textarea required name="secAns" class="form-control" cols="15" rows="5"></textarea>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Third Answer</label>
+                        <textarea required name="tirAns" class="form-control" cols="15" rows="5"></textarea>
+                    </div>
+                    <div class="text-center py-5">
+                        <button type="submit" name="usersAnswer" class="btn btn-user">next</button>
+                        <a href="{% url 'cancelexam' %}" class="btn btn-user">cancel exam</a>
+                    </div>
+                </form>
+            </div>
+            <div class="col-md-5">
+                {% if userAnsGiv %}
+                <h3 class="pb-5"><b>Question:</b> {{ retQuestion }}</h3>
+                <p style="text-align: justify;"><b>First Answer:</b> {{ retFirst }}</p>
+                <p style="text-align: justify;"><b>Second Answer:</b> {{ retSecond }}</p>
+                <p style="text-align: justify;"><b>Third Answer:</b> {{ retThird }}</p>
+                {% else %}
+                
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}
