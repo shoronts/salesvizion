@@ -8,7 +8,8 @@ class loginForm(forms.Form):
         error_messages = {'required' : 'Enter a valid Username.'},
         max_length = 100,
         widget = forms.TextInput( attrs = {
-            'placeholder' : 'Username'
+            'placeholder' : 'Username',
+            'class' : 'form-control'
             })
     )
 
@@ -17,7 +18,8 @@ class loginForm(forms.Form):
         min_length = 8,
         max_length = 100,
         widget = forms.PasswordInput(attrs = {
-            'placeholder' : 'Password'
+            'placeholder' : 'Password',
+            'class' : 'form-control'
             })
     )
 

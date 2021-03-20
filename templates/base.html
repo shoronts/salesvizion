@@ -5,138 +5,146 @@
 <head>
   <!-- Required meta tags -->
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
 
   <!-- Favicon Icon and Title-->
   <link rel="shortcut icon" href="{% static 'img/favicon-icon.png' %}" type="image/x-icon">
   <title>{% block title %}{% endblock %} | Sales Vizion</title>
 
   <!-- All FOnts -->
-  <link rel="preconnect" href="https://fonts.gstatic.com">
-  <link
-    href="https://fonts.googleapis.com/css2?family=Fjalla+One&family=Share&family=Source+Sans+Pro:ital,wght@0,300;0,400;0,600;1,300&display=swap"
-    rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Lato:400,700,900" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,500,600,700" rel="stylesheet">
 
   <!-- Bootstrap and custom CSS -->
-  <link rel="stylesheet" href="{% static 'css/bootstrapcss/bootstrap.min.css' %}">
-  <link rel="stylesheet" href="{% static 'css/header.css' %}">
+  <link href="{% static 'assets/css/bootstrap.min.css' %}" rel="stylesheet" />
+  <link href="{% static 'assets/fonts/font-awesome.min.css' %}" rel="stylesheet" />
+  <link href="{% static 'assets/fonts/themify-icons.css' %}" rel="stylesheet" />
+  <link href="{% static 'assets/css/owl.carousel.min.css' %}" rel="stylesheet" />
+  <link href="{% static 'assets/css/slick.css' %}" rel="stylesheet" />
+  <link href="{% static 'assets/css/slick-theme.css' %}" rel="stylesheet" />
+  <link href="{% static 'assets/css/animate.css' %}" rel="stylesheet" />
+  <link href="{% static 'assets/css/animate.min.css' %}" rel="stylesheet" />
+  <link href="{% static 'assets/css/owl.theme.default.min.css' %}" rel="stylesheet" />
+  <link href="{% static 'assets/css/style.css' %}" rel="stylesheet" />
+  <link href="{% static 'assets/css/responsive.css' %}" rel="stylesheet" />
+
+  <link rel="stylesheet" href="{% static 'assets/css/switcher/switcher.css' %}">
+  <link rel="stylesheet" href="{% static 'assets/css/switcher/style1.css' %}" id="colors">
   {% block css %}{% endblock %}
 
 </head>
 
-<body id="im">
-  <header>
-    <div class="container">
-      <div class="d-flex justify-content-between align-items-center">
-        <div class="menu" id="menu">
-          <svg viewBox="0 0 24 24" fill="currentColor" width="24px" height="24px" data-ux="IconHamburger"
-            class="x-el x-el-svg c2-1 c2-2 c2-t c2-u c2-v c2-m c2-w c2-3 c2-4 c2-5 c2-6 c2-7 c2-8 x-d-ux">
-            <g>
-              <path fill-rule="evenodd" d="M4 8h16V6H4z"></path>
-              <path fill-rule="evenodd" d="M4 13.096h16v-2.001H4z"></path>
-              <path fill-rule="evenodd" d="M4 18.346h16v-2H4z"></path>
-            </g>
-          </svg>
-        </div>
-        <a id="logo" class="text-decoration-none" href="{% url 'home' %}">SalesVizion</a>
-        <div id="menu-icon">
-          <div class="d-flex">
-            <div class="search-icon me-2">
-              <svg viewBox="0 0 24 24" fill="currentColor" width="24px" height="24px" typography="NavAlpha"
-                data-ux="UtilitiesMenuIcon" data-aid="SEARCH_ICON_RENDERED"
-                class="x-el x-el-svg c2-1 c2-x c2-l c2-u c2-2b c2-2d c2-2e c2-2f c2-e c2-1g c2-2g c2-2h c2-2i c2-m c2-w c2-3 c2-n c2-p c2-2j c2-2k c2-2l c2-2m x-d-ux x-d-aid">
-                <path fill-rule="evenodd"
-                  d="M16.083 14.688l3.833 3.764-1.481 1.455-3.878-3.807a6.746 6.746 0 0 1-3.808 1.167C7.028 17.267 4 14.29 4 10.633 4 6.976 7.028 4 10.75 4c3.72 0 6.748 2.976 6.748 6.633 0 1.467-.5 2.894-1.415 4.055zm-.673-4.055c0-2.52-2.09-4.569-4.66-4.569-2.57 0-4.66 2.05-4.66 4.57 0 2.519 2.09 4.569 4.66 4.569 2.57 0 4.66-2.05 4.66-4.57z">
-                </path>
-              </svg>
-            </div>
-            <div class="cart-icon me-2">
-              <svg viewBox="0 0 24 24" fill="currentColor" width="24px" height="24px" typography="NavAlpha"
-                data-ux="UtilitiesMenuIcon" data-aid="CART_ICON_RENDER"
-                class="x-el x-el-svg c2-1 c2-x c2-l c2-u c2-2d c2-2e c2-m c2-w c2-3 c2-2u c2-n c2-p c2-2j c2-2v c2-2k c2-2w c2-2x c2-2y x-d-ux x-d-aid">
-                <path fill-rule="evenodd"
-                  d="M16.235 17.034c.634 0 1.16.527 1.16 1.164 0 .636-.526 1.164-1.16 1.164-.633 0-1.16-.528-1.16-1.164a1.17 1.17 0 0 1 1.16-1.164zm-8.118 0c.634 0 1.16.527 1.16 1.164 0 .636-.526 1.164-1.16 1.164-.634 0-1.16-.528-1.16-1.164a1.17 1.17 0 0 1 1.16-1.164zm.632-4.492l6.818-.964 1.019-3.5-8.709.081.872 4.383zm.263 2.05l-.024.47h8.727l.028 1.972H7.537a.915.915 0 0 1-.913-.916c0-.218.113-.513.404-1.051l.12-.263L5.63 6.83H4V5h3.178l.289 1.164h11.668l-1.987 7.217-8.136 1.21z">
-                </path>
-              </svg>
-            </div>
-            <div class="user-icon" id="user-icon">
-              <svg viewBox="0 0 24 24" fill="currentColor" width="24px" height="24px" typography="NavAlpha"
-                data-ux="UtilitiesMenuIcon"
-                class="x-el x-el-svg c2-1 c2-x c2-l c2-u c2-30 c2-31 c2-2d c2-2e c2-23 c2-m c2-w c2-3 c2-2u c2-n c2-p c2-2j c2-2v c2-2k c2-2w c2-2x c2-2y x-d-ux">
-                <path fill-rule="evenodd"
-                  d="M19.62 19.29l.026.71h-2.421l-.028-.658c-.119-2.71-2.48-4.833-5.374-4.833-2.894 0-5.254 2.123-5.373 4.833L6.421 20H4l.027-.71c.098-2.56 1.658-4.896 4.04-6.135-1.169-.99-1.848-2.402-1.848-3.9C6.219 6.357 8.733 4 11.823 4c3.09 0 5.605 2.357 5.605 5.255 0 1.497-.68 2.909-1.85 3.9 2.383 1.239 3.944 3.574 4.041 6.135zM11.822 6.273c-1.754 0-3.18 1.338-3.18 2.982 0 1.645 1.426 2.982 3.18 2.982 1.754 0 3.18-1.337 3.18-2.982 0-1.644-1.426-2.982-3.18-2.982z">
-                </path>
-              </svg>
-              <div class="user-access" id="user-access">
-                <ul class="m-0 p-0">
-                  {% if user.is_authenticated %}
-                  <p class="ms-3">You are loged as {{ user.username }} </p>
-                  <li><a href="{% url 'profile' %}" class="{% if request.resolver_match.url_name == 'profile' %} activeMenu {% endif %}">My accounts</a></li>
-                  <li><a href="{% url 'logout' %}" class="{% if request.resolver_match.url_name == 'logout' %} activeMenu {% endif %}">logout</a></li>
-                  {% else %}
-                  <li><a href="{% url 'login' %}" class="{% if request.resolver_match.url_name == 'login' %} activeMenu {% endif %}">sing in</a></li>
-                  <li><a href="{% url 'register' %}" class="{% if request.resolver_match.url_name == 'register' %} activeMenu {% endif %}">create account</a></li>
-                  <hr>
-                  <li><a href="#" class="{% if request.resolver_match.url_name == 'logout' %} activeMenu {% endif %}">orders</a></li>
-                  <li><a href="{% url 'profile' %}" class="{% if request.resolver_match.url_name == 'profile' %} activeMenu {% endif %}">My accounts</a></li>
-                  {% endif %}
-                </ul>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+<body>
+
+  <div class="preloader">
+    <div class="spinner">
+      <div class="double-bounce1"></div>
+      <div class="double-bounce2"></div>
     </div>
-  </header>
-  <div class="main-border">
-    <div class="bottom-border"></div>
   </div>
-  <div class="all-menu" id="all-menu">
-    <ul>
-      {% if user.is_authenticated %}
-      <li><a href="{% url 'home' %}" class="{% if request.resolver_match.url_name == 'home' %} activeMenu {% endif %}">Home</a></li>
-      <li><a href="{% url 'profile' %}" class="{% if request.resolver_match.url_name == 'profile' %} activeMenu {% endif %}">profile</a></li>
-      <li><a href="{% url 'question' %}" class="{% if request.resolver_match.url_name == 'question' %} activeMenu {% endif %}">questions</a></li>
-      <li><a href="{% url 'results' %}" class="{% if request.resolver_match.url_name == 'results' %} activeMenu {% endif %}">Results</a></li>
-      <li><a href="#" class="{% if request.resolver_match.url_name == 'products' %} activeMenu {% endif %}">products</a></li>
-      <li><a href="#">cart</a></li>
-      <li><a href="{% url 'contact' %}" class="{% if request.resolver_match.url_name == 'contact' %} activeMenu {% endif %}">contact</a></li>
-      <li><a href="{% url 'logout' %}" class="{% if request.resolver_match.url_name == 'logout' %} activeMenu {% endif %}">logout</a></li>
-      {% else %}
-      <li><a href="{% url 'home' %}" class="{% if request.resolver_match.url_name == 'home' %} activeMenu {% endif %}">Home</a></li>
-      <li><a href="#">products</a></li>
-      <li><a href="{% url 'register' %}" class="{% if request.resolver_match.url_name == 'register' %} activeMenu {% endif %}">create account</a></li>
-      <li><a href="{% url 'login' %}" class="{% if request.resolver_match.url_name == 'login' %} activeMenu {% endif %}">sing in</a></li>
-      <li><a href="#">cart</a></li>
-      <li><a href="{% url 'contact' %}" class="{% if request.resolver_match.url_name == 'contact' %} activeMenu {% endif %}">contact</a></li>
-      {% endif %}
-    </ul>
-    <div class="close">
-      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-x-octagon" viewBox="0 0 16 16">
-        <path d="M4.54.146A.5.5 0 0 1 4.893 0h6.214a.5.5 0 0 1 .353.146l4.394 4.394a.5.5 0 0 1 .146.353v6.214a.5.5 0 0 1-.146.353l-4.394 4.394a.5.5 0 0 1-.353.146H4.893a.5.5 0 0 1-.353-.146L.146 11.46A.5.5 0 0 1 0 11.107V4.893a.5.5 0 0 1 .146-.353L4.54.146zM5.1 1L1 5.1v5.8L5.1 15h5.8l4.1-4.1V5.1L10.9 1H5.1z"/>
-        <path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z"/>
-      </svg>
+
+
+  <div class="navbar navbar-default navbar-fixed-top menu-top">
+    <div class="container">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a href="{% url 'home' %}" class="navbar-brand"><img src="{% static 'assets/images/logo.png' %}" alt="logo"></a>
+      </div>
+      <div class="navbar-collapse collapse">
+        <nav>
+          <div class="nav navbar-nav navbar-right">
+            <ul class="nav navbar-nav">
+              <li><a href="{% url 'home' %}">Home </a></li>
+              <li><a href="#about">About</a></li>
+              <!-- <li><a href="#features">Features</a></li>
+              <li><a href="#screenshots">Screenshots </a></li>
+              <li><a href="#pricing_table">Pricing </a></li>
+              <li><a href="#app_review">Reviews </a></li>
+              <li><a href="#blog">Blog </a></li>
+              <li><a href="#faq">FAQ</a></li> -->
+              <li><a href="{% url 'register' %}">Register</a></li>
+              <li><a href="{% url 'login' %}">Login</a></li>
+              <li><a href="{% url 'contact' %}">Contact </a></li>
+            </ul>
+          </div>
+        </nav>
+      </div>
     </div>
   </div>
   <!-- Global Body Starts -->
   {% block content %}{% endblock %}
-  <!-- Global Body End -->
-  <footer>
+  <!-- Global Body Ends -->
+  <section id="footer" class="text-center">
     <div class="container">
-      <div class="row py-2">
-        <div class="col-md-6 registered">
-          <p class="mb-0 text-uppercase">&copy; 2021 Sales Vizion – All Rights Reserved</p>
+      <div class="subscribe_form">
+        <div class="single_subscribe_content">
+          <h3>Subscribe Our Newsletter</h3>
+          <p>
+            Lorem Ipsum is simply dummy text of the printing and typesetting industry
+          </p>
         </div>
-        <div class="col-md-6 credit">
-          <p class="mb-0 text-uppercase"> Powered by <a href="https://squaretechit.com/">Square Tech IT</a></p>
-        </div>
+        <form class="form-inline smain_form text-center" method="post">
+          <div class="form-group">
+            <input type="email" class="form-control" id="exampleInputEmail2" placeholder="Enter Email Here">
+            <button type="submit" class="btn btn-default"><i class="ti-location-arrow"></i></button>
+          </div>
+        </form>
+      </div>
+      <div class="social_link">
+        <a href="#">
+          <i class="fa fa-facebook"></i>
+        </a>
+        <a href="#">
+          <i class="fa fa-twitter"></i>
+        </a>
+        <a href="#">
+          <i class="fa fa-pinterest"></i>
+        </a>
+        <a href="#">
+          <i class="fa fa-linkedin"></i>
+        </a>
+      </div>
+      <div class="copyrigt_text">
+        <p>Copyright &copy; Sales Vizion
+          <script>
+              document.write(new Date().getFullYear());
+          </script> All Rights Riserved | Powered by <a href="https://squaretechit.com/" target="_blank">Square Tech IT</a> </p>
       </div>
     </div>
-  </footer>
-  <!-- Optional JavaScript; Bootstrap Bundle with Popper -->
-  <script src="{% static 'js/bootstrapjs/bootstrap.bundle.min.js' %}"></script>
-  <!-- Custom Js -->
-  <script src="{% static 'js/header.js' %}"></script>
+  </section>
+
+
+  <div id="style-switcher">
+    <h2>Choose Color<a href="#"><i class="fa fa-cog fa-spin"></i></a></h2>
+    <div>
+      <ul class="colors" id="color1">
+        <li><a href="#" class="style1"></a></li>
+        <li><a href="#" class="style2"></a></li>
+        <li><a href="#" class="style3"></a></li>
+        <li><a href="#" class="style4"></a></li>
+        <li><a href="#" class="style5"></a></li>
+        <li><a href="#" class="style6"></a></li>
+        <li><a href="#" class="style7"></a></li>
+        <li><a href="#" class="style8"></a></li>
+      </ul>
+    </div>
+  </div>
+
+
+  <script src="{% static 'assets/js/jquery-1.12.4.min.js' %}"></script>
+  <script src="{% static 'assets/js/bootstrap.min.js' %}"></script>
+  <script src="{% static 'assets/js/owl.carousel.min.js' %}"></script>
+  <script src="{% static 'assets/js/wow.min.js' %}"></script>
+  <script src="{% static 'assets/js/slick.min.js' %}"></script>
+  <script src="{% static 'assets/js/simplePlayer.js' %}"></script>
+  <script src="{% static 'assets/js/switcher.js' %}"></script>
+  <script src="{% static 'assets/js/scripts.js' %}"></script>
+  {% block js %}{% endblock %}
 </body>
 
 </html>

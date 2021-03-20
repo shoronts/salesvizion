@@ -3,27 +3,32 @@ from django.core.exceptions import ValidationError
 
 
 class contactForm(forms.Form):
-    name = forms.CharField(error_messages = {'required' : 'Please enter your name.'},
+    name = forms.CharField(error_messages = {'required' : 'Please enter your Full Name.'},
         widget = forms.TextInput( attrs = {
-            'placeholder' : 'Name'
+            'placeholder' : 'Full Name',
+            'class' : 'form-control'
         })
     )
 
     email = forms.EmailField(error_messages={'required' : 'Please use A Vaild Email.'},
         widget = forms.EmailInput( attrs = {
-            'placeholder' : 'Email'
+            'placeholder' : 'Email',
+            'class' : 'form-control'
         })
     )
 
-    url = forms.URLField(error_messages = {'required' : 'Please enter your website URL'},
-        widget = forms.URLInput( attrs = {
-            'placeholder' : 'Business URL or description'
+    subject = forms.CharField(error_messages = {'required' : 'Please enter your Subject.'},
+        widget = forms.TextInput( attrs = {
+            'placeholder' : 'Subject',
+            'class' : 'form-control'
         })
     )
+    
 
     message = forms.CharField(error_messages = {'required' : 'Your Message Is Important For Us.'},
         widget = forms.Textarea( attrs = {
+            'class' : 'form-control',
             'placeholder' : 'How can we help your business thrive?',
-            'rows' : 5
+            'rows' : 6
         })
     )
