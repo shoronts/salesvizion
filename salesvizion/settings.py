@@ -2,7 +2,7 @@ import os
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'f!wh3q5%^*6&tjnbpm=f-s1d(lrj5&75@n!an#9%%6)^x44231'
 DEBUG = True
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['www.salesvizion.com','salesvizion.com']
 
 # Application definition
 
@@ -56,9 +56,9 @@ DATABASES = {
         'OPTIONS': {
             'init_command': "SET sql_mode='STRICT_TRANS_TABLES'",
             },
-        'NAME': 'mark',
-        'USER': 'root',
-        'PASSWORD': '',
+        'NAME': 'salesvizion',
+        'USER': 'salesvizion',
+        'PASSWORD': 'WiuEtN!!@z34',
         'HOST': '127.0.0.1',
         'PORT': '3306'
     }
@@ -66,7 +66,6 @@ DATABASES = {
 
 
 # Password validation
-# https://docs.djangoproject.com/en/2.2/ref/settings/#auth-password-validators
 
 AUTH_PASSWORD_VALIDATORS = [
     {
@@ -85,22 +84,16 @@ AUTH_PASSWORD_VALIDATORS = [
 
 
 # Internationalization
-# https://docs.djangoproject.com/en/2.2/topics/i18n/
-
 LANGUAGE_CODE = 'en-us'
-
 TIME_ZONE = 'UTC'
-
 USE_I18N = True
-
 USE_L10N = True
-
 USE_TZ = True
-
 
 # Static files (CSS, JavaScript, Images)
 STATIC_URL = '/static/'
 STATICFILES_DIRS = [os.path.join(BASE_DIR,'static')]
+# STATIC_ROOT = '/home/salesvizion/salesvizion/static'
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = [os.path.join(BASE_DIR, 'media')]

@@ -6,7 +6,6 @@ from django.contrib import messages
 from .models import question, answer
 from django.http import Http404
 import datetime
-import pickle
 import os
 
 
@@ -24,13 +23,20 @@ class IndexView(TemplateView):
             # Find Next Urls
             allUrlsList = []
             for x in allUrls:
-                allUrlsList.append(x.slug)
+                allUrlsList.append(str(x.slug))
 
             nextUrlIm = allUrlsList[0]
             allUrlsList.remove(nextUrlIm)
 
-            userExamFile = 'userexam/' + str(userName) + 'exam.dat'
-            pickle.dump(allUrlsList, open(userExamFile, "wb"))
+            allUrlFuture = ''
+
+            for a in allUrlsList:
+                allUrlFuture += a + ','
+
+            userExamFile = os.path.join('/home/salesvizion/salesvizion/userexam/' + str(userName) + 'exam.txt')
+            createShoron = open(userExamFile, "w")
+            createShoron.write(str(allUrlFuture))
+            createShoron.close()
 
             # Find User Versions
             date = datetime.date.today()
@@ -50,10 +56,13 @@ class IndexView(TemplateView):
             except:
                 examVirsion = userName + 'virsion1'
 
+
             #User Exam Version
-            userExamInfoFile = [examVirsion, str(date)]
-            userExamInfo = 'userexam/' + str(userName) + 'examinfo.dat'
-            pickle.dump(userExamInfoFile, open(userExamInfo, "wb"))
+            userExamInfoFile = examVirsion+ ',' + str(date)
+            userExamInfo = os.path.join('/home/salesvizion/salesvizion/userexam/' + str(userName) + 'examinfo.txt')
+            createShoron1 = open(userExamInfo, "w")
+            createShoron1.write(str(userExamInfoFile))
+            createShoron1.close()
 
             return redirect('allquestion', nextUrlIm)
 
@@ -77,10 +86,12 @@ class IndexView(TemplateView):
                 thirdAns = request.POST['tirAns']
 
                 # Read File
-                userExamInfo1 = 'userexam/' + str(userName) + 'examinfo.dat'
-                runningQuestion = pickle.load(open(userExamInfo1, "rb"))
-                examVersion1 = runningQuestion[0]
-                examDate1 = runningQuestion[1]
+                userExamInfo = os.path.join('/home/salesvizion/salesvizion/userexam/' + str(userName) + 'examinfo.txt')
+                runningQuestion = open(userExamInfo, "r")
+                runningQuestion1 = runningQuestion.read().split(',')
+                examVersion1 = runningQuestion1[0]
+                examDate1 = runningQuestion1[1]
+                runningQuestion.close()
 
                 saveAns = answer(
                     user = userName,
@@ -93,45 +104,71 @@ class IndexView(TemplateView):
                 saveAns.save()
 
                 # Write File
-                userExamAnsIm = [str(question1), str(firstAns), str(secondAns), str(thirdAns)]
-                userExamAns = 'userexam/' + str(userName) + 'examanswer.dat'
-                pickle.dump(userExamAnsIm, open(userExamAns, "wb"))
+                userExamAnsIm = str(question1) + ',' +  str(firstAns) + ',' + str(secondAns) + ',' + str(thirdAns)
+                userExamInfo = os.path.join('/home/salesvizion/salesvizion/userexam/' + str(userName) + 'examanswer.txt')
+                createShoron1 = open(userExamInfo, "w")
+                createShoron1.write(str(userExamAnsIm))
+                createShoron1.close()
 
                 # Read File
-                userExamFile = 'userexam/' + str(userName) + 'exam.dat'
-                runningQuestion = pickle.load(open(userExamFile, "rb"))
+                userExamInfo = os.path.join('/home/salesvizion/salesvizion/userexam/' + str(userName) + 'exam.txt')
+                runningUrllist = open(userExamInfo, "r")
+                runningUrl = runningUrllist.read().split(',')
+                nextUrl = runningUrl[0]
+                runningUrl.remove(nextUrl)
+                runningUrllist.close()
 
-                nextUrl = runningQuestion[0]
-                runningQuestion.remove(nextUrl)
+                nextRunningUrlList = open(userExamInfo, "w")
 
-                pickle.dump(runningQuestion, open(userExamFile, "wb"))
-                lastUrl = str('/questions/' + nextUrl)
-                return redirect(lastUrl)
+                runningLastUrl = ''
+
+                for l in runningUrl:
+                    runningLastUrl += l + ','
+
+                nextRunningUrlList.write(str(runningLastUrl))
+                nextRunningUrlList.close()
+
+                if nextUrl == '':
+                    userName = request.session['usernameAll']
+                    userExamFile = '/home/salesvizion/salesvizion/userexam/' + str(userName) + 'exam.txt'
+                    userExamInfo2 = '/home/salesvizion/salesvizion/userexam/' + str(userName) + 'examinfo.txt'
+                    userExamAns = '/home/salesvizion/salesvizion/userexam/' + str(userName) + 'examanswer.txt'
+                    os.remove(userExamFile)
+                    os.remove(userExamInfo2)
+                    os.remove(userExamAns)
+                    return redirect('results')
+                    
+                else:
+                    lastUrl = str('/questions/' + nextUrl)
+                    return redirect(lastUrl)
 
             except:
-                userExamFile = 'userexam/' + str(userName) + 'exam.dat'
-                userExamAns = 'userexam/' + str(userName) + 'examanswer.dat'
-                userExamInfo2 = 'userexam/' + str(userName) + 'examinfo.dat'
+                userName = request.session['usernameAll']
+                userExamFile = '/home/salesvizion/salesvizion/userexam/' + str(userName) + 'exam.txt'
+                userExamInfo2 = '/home/salesvizion/salesvizion/userexam/' + str(userName) + 'examinfo.txt'
+                userExamAns = '/home/salesvizion/salesvizion/userexam/' + str(userName) + 'examanswer.txt'
                 os.remove(userExamFile)
-                os.remove(userExamAns)
                 os.remove(userExamInfo2)
+                os.remove(userExamAns)
                 return redirect('results')
 
         else:
             try:
                 userName = request.session['usernameAll']
                 nextQuestion = question.objects.get(slug=slug)
-                userExamAns = 'userexam/' + str(userName) + 'examanswer.dat'
-                userAnsGiv = pickle.load(open(userExamAns, "rb"))
 
-                retQuestion = userAnsGiv[0]
-                retFirst = userAnsGiv[1]
-                retSecond = userAnsGiv[2]
-                retThird = userAnsGiv[3]
+                userExamInfo = os.path.join('/home/salesvizion/salesvizion/userexam/' + str(userName) + 'examanswer.txt')
+                userAnsGiv = open(userExamInfo, "r")
+                userAnsGiv1 = userAnsGiv.read().split(',')
+                retQuestion = userAnsGiv1[0]
+                retFirst = userAnsGiv1[1]
+                retSecond = userAnsGiv1[2]
+                retThird = userAnsGiv1[3]
+                userAnsGiv.close()
 
                 contex = {
                     'nextQuestions' : nextQuestion,
-                    'userAnsGiv' : userAnsGiv,
+                    'userAnsGiv' : userAnsGiv1,
                     'retQuestion' : retQuestion,
                     'retFirst' : retFirst,
                     'retSecond' : retSecond,
@@ -149,20 +186,23 @@ class IndexView(TemplateView):
 
     @login_required
     def cancelexam(request):
-        userName = request.session['usernameAll']
-        userExamFile = 'userexam/' + str(userName) + 'exam.dat'
-        userExamInfo2 = 'userexam/' + str(userName) + 'examinfo.dat'
-        userExamAns = 'userexam/' + str(userName) + 'examanswer.dat'
-        os.remove(userExamFile)
-        os.remove(userExamInfo2)
-
         try:
-            os.remove(userExamAns)
+            userName = request.session['usernameAll']
+            userExamFile = '/home/salesvizion/salesvizion/userexam/' + str(userName) + 'exam.txt'
+            userExamInfo2 = '/home/salesvizion/salesvizion/userexam/' + str(userName) + 'examinfo.txt'
+            userExamAns = '/home/salesvizion/salesvizion/userexam/' + str(userName) + 'examanswer.txt'
+            os.remove(userExamFile)
+            os.remove(userExamInfo2)
 
+            try:
+                os.remove(userExamAns)
+                return render(request, 'questions/cancelexam.html')
+
+            except:
+                return render(request, 'questions/cancelexam.html')
+        
         except:
-            pass
-
-        return render(request, 'questions/cancelexam.html')
+            return render(request, 'questions/cancelexam.html')
 
 
     @login_required
@@ -201,3 +241,4 @@ class IndexView(TemplateView):
             return render(request, 'questions/singleresults.html', contex)
         else:
             raise Http404
+            
