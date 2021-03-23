@@ -2,10 +2,10 @@
 {% load static %}
 {% block title %}Cancel Answers{% endblock %}
 {% block css %}
-
+<link rel="stylesheet" href="{% static 'css/questions/cancelexam.css' %}">
 {% endblock %}
 {% block content %}
-<section>
+<section id="cancelExam">
     <div class="container py-5">
         <h2>You have canceled the Questions Answer.</h2>
         <p>If you want to do it again please <a href="{% url 'question' %}">answer</a> or go to <a href="{% url 'results' %}">results</a>.</p>

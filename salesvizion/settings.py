@@ -1,7 +1,7 @@
 import os
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'f!wh3q5%^*6&tjnbpm=f-s1d(lrj5&75@n!an#9%%6)^x44231'
-DEBUG = True
+DEBUG = False
 ALLOWED_HOSTS = ['www.salesvizion.com','salesvizion.com']
 
 # Application definition

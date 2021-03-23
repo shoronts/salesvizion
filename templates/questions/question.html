@@ -5,12 +5,7 @@
 <link rel="stylesheet" href="{% static 'css/questions/questions.css' %}">
 {% endblock %}
 {% block content %}
-<section class="mt-5">
-    <div class="container py-5">
-        <h3 class="text-center">Question Page</h3>
-    </div>
-</section>
-<section class="py-5 mb-5">
+<section class="question">
     <div class="container">
         <h3 class="mb-5">You have total {{ totalQuestions }} Questions. They are below.</h3>
         <form action="{% url 'question' %}" method="POST">
@@ -22,7 +17,7 @@
                 {% endfor %}
             </ol>
             <div class="text-center pt-5">
-                <button class="btn btn-user" type="submit">Let's answere</button>
+                <button class="appbutton" type="submit">Let's answere</button>
             </div>
         </form>
     </div>

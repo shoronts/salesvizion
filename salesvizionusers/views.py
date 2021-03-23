@@ -3,7 +3,7 @@ from django.views.generic import TemplateView
 from django.contrib.auth.models import auth, User
 from django.contrib.auth.decorators import login_required
 from django.contrib import messages
-from .forms import loginForm
+from .forms import loginForm, registerForm
 
 
 class IndexView(TemplateView):
@@ -13,10 +13,19 @@ class IndexView(TemplateView):
     def register(request):
         if request.user.is_authenticated:
             return redirect('profile')
-        return render(request, 'users/register.html')
+        
+        elif request.method == 'POST':
+            form = registerForm(request.POST)
+            if form.is_valid():
+                messages.success(request, 'Thank You For Registration. Please check your email to activate your account. Thanks')
+                return redirect('register')
+
+        else:
+            form = registerForm()
+
+        return render(request, 'users/register.html', {'form':form})
 
     def login(request):
-        form = loginForm()
         if request.user.is_authenticated:
             return redirect('profile')
 

@@ -5,12 +5,12 @@
 <link rel="stylesheet" href="{% static 'css/questions/allquestions.css' %}">
 {% endblock %}
 {% block content %}
-<section class="py-5">
+<section class="allquestion">
     <div class="container">
         <h2 class="text-center">Please answere the below questions:</h2>
     </div>
 </section>
-<section class="py-5 mb-5">
+<section class="secondSec">
     <div class="container">
         <div class="row">
             <div class="col-md-7">
@@ -31,9 +31,9 @@
                         <label class="form-label">Third Answer</label>
                         <textarea required name="tirAns" class="form-control" cols="15" rows="5"></textarea>
                     </div>
-                    <div class="text-center py-5">
-                        <button type="submit" name="usersAnswer" class="btn btn-user">next</button>
-                        <a href="{% url 'cancelexam' %}" class="btn btn-user">cancel exam</a>
+                    <div class="allQuestionBtn">
+                        <button type="submit" name="usersAnswer" class="appbutton">next</button>
+                        <a href="{% url 'cancelexam' %}" class="appbutton">cancel exam</a>
                     </div>
                 </form>
             </div>

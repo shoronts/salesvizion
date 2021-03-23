@@ -16,6 +16,11 @@
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,500,600,700" rel="stylesheet">
 
   <!-- Bootstrap and custom CSS -->
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+  </style>
   <link href="{% static 'assets/css/bootstrap.min.css' %}" rel="stylesheet" />
   <link href="{% static 'assets/fonts/font-awesome.min.css' %}" rel="stylesheet" />
   <link href="{% static 'assets/fonts/themify-icons.css' %}" rel="stylesheet" />
@@ -26,6 +31,7 @@
   <link href="{% static 'assets/css/animate.min.css' %}" rel="stylesheet" />
   <link href="{% static 'assets/css/owl.theme.default.min.css' %}" rel="stylesheet" />
   <link href="{% static 'assets/css/style.css' %}" rel="stylesheet" />
+  <link href="{% static 'assets/css/switcher/style2.css' %}" rel="stylesheet" />
   <link href="{% static 'assets/css/responsive.css' %}" rel="stylesheet" />
 
   <link rel="stylesheet" href="{% static 'assets/css/switcher/switcher.css' %}">
@@ -59,17 +65,26 @@
         <nav>
           <div class="nav navbar-nav navbar-right">
             <ul class="nav navbar-nav">
-              <li><a href="{% url 'home' %}">Home </a></li>
+              {% if user.is_authenticated %}
               <li><a href="#about">About</a></li>
+              <li><a href="{% url 'profile' %}">Profile</a></li>
+              <li><a href="{% url 'question' %}">questions</a></li>
+              <li><a href="{% url 'results' %}">Reselts</a></li>
               <!-- <li><a href="#features">Features</a></li>
               <li><a href="#screenshots">Screenshots </a></li>
               <li><a href="#pricing_table">Pricing </a></li>
               <li><a href="#app_review">Reviews </a></li>
               <li><a href="#blog">Blog </a></li>
               <li><a href="#faq">FAQ</a></li> -->
+              <li><a href="{% url 'contact' %}">Contact </a></li>
+              <li><a href="{% url 'logout' %}">logout </a></li>
+              {% else %}
+              <li><a href="{% url 'home' %}">Home </a></li>
+              <li><a href="/#about">About</a></li>
               <li><a href="{% url 'register' %}">Register</a></li>
               <li><a href="{% url 'login' %}">Login</a></li>
               <li><a href="{% url 'contact' %}">Contact </a></li>
+              {% endif %}
             </ul>
           </div>
         </nav>
@@ -81,7 +96,7 @@
   <!-- Global Body Ends -->
   <section id="footer" class="text-center">
     <div class="container">
-      <div class="subscribe_form">
+      <!-- <div class="subscribe_form">
         <div class="single_subscribe_content">
           <h3>Subscribe Our Newsletter</h3>
           <p>
@@ -94,8 +109,8 @@
             <button type="submit" class="btn btn-default"><i class="ti-location-arrow"></i></button>
           </div>
         </form>
-      </div>
-      <div class="social_link">
+      </div> -->
+      <!-- <div class="social_link">
         <a href="#">
           <i class="fa fa-facebook"></i>
         </a>
@@ -108,18 +123,19 @@
         <a href="#">
           <i class="fa fa-linkedin"></i>
         </a>
-      </div>
+      </div> -->
       <div class="copyrigt_text">
         <p>Copyright &copy; Sales Vizion
           <script>
-              document.write(new Date().getFullYear());
-          </script> All Rights Riserved | Powered by <a href="https://squaretechit.com/" target="_blank">Square Tech IT</a> </p>
+            document.write(new Date().getFullYear());
+          </script> All Rights Riserved | Powered by <a href="https://squaretechit.com/" target="_blank">Square Tech
+            IT</a> </p>
       </div>
     </div>
   </section>
 
 
-  <div id="style-switcher">
+  <!-- <div id="style-switcher">
     <h2>Choose Color<a href="#"><i class="fa fa-cog fa-spin"></i></a></h2>
     <div>
       <ul class="colors" id="color1">
@@ -133,7 +149,7 @@
         <li><a href="#" class="style8"></a></li>
       </ul>
     </div>
-  </div>
+  </div> -->
 
 
   <script src="{% static 'assets/js/jquery-1.12.4.min.js' %}"></script>
