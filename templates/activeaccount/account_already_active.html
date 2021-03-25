@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Already Activate{% endblock %}
+{% block content %}
+<section class="py-5 my-5">
+    <div class="container py-5 my-5">
+        <h3 class="text-center py-5 my-5" style="color: green;">This user is already activate. Thanks for your confirmation.</h3>
+        <p class="text-center">If you forgot your password please <a style="color: red;" href="#">Reaset password</a> or go <a style="color: green;" href="{% url 'home' %}">HOME</a>.</p>
+    </div>
+</section>
+{% endblock %}

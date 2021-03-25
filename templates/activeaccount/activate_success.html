@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Sucessfullt Activate{% endblock %}
+{% block content %}
+<section class="py-5 my-5">
+    <div class="container py-5 my-5">
+        <h3 class="text-center py-5 my-5">Thank you for your email confirmation.</h3>
+        <p class="text-center">Now you can <a href="{% url 'login' %}" style="color: green;">LOGIN</a> to your account or go <a href="{% url 'home' %}" style="color: green;">HOME</a>.</p>
+    </div>
+</section>
+{% endblock %}
