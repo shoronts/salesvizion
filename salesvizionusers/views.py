@@ -9,7 +9,7 @@ from django.contrib.sites.shortcuts import get_current_site
 from django.template.loader import render_to_string
 from django.utils.http import urlsafe_base64_encode, urlsafe_base64_decode
 from django.utils.encoding import force_bytes, force_text, DjangoUnicodeDecodeError
-from .token import generate_token
+# from .token import generate_token
 from django.core.mail import EmailMultiAlternatives, send_mail
 from django.conf import settings
 from django.utils.html import strip_tags
@@ -64,28 +64,28 @@ class IndexView(TemplateView):
 
         return render(request, 'users/register.html', {'form':form})
 
-    def ActivateAccountView(request, uidb64, token):
-        if request.user.is_authenticated:
-            return redirect('profile')
+    # def ActivateAccountView(request, uidb64, token):
+    #     if request.user.is_authenticated:
+    #         return redirect('profile')
         
-        else:
-            try:
-                uid = force_text(urlsafe_base64_decode(uidb64))
-                user = User.objects.get(pk=uid)
+    #     else:
+    #         try:
+    #             uid = force_text(urlsafe_base64_decode(uidb64))
+    #             user = User.objects.get(pk=uid)
 
-            except (TypeError, ValueError, OverflowError, User.DoesNotExist):
-                user = None
+    #         except (TypeError, ValueError, OverflowError, User.DoesNotExist):
+    #             user = None
 
-            if user is not None and generate_token.check_token(user, token):
-                user.is_active = True
-                user.save()
-                return render(request, 'activeaccount/activate_success.html')
+    #         if user is not None and generate_token.check_token(user, token):
+    #             user.is_active = True
+    #             user.save()
+    #             return render(request, 'activeaccount/activate_success.html')
 
-            elif not generate_token.check_token(user, token):
-                return render(request, 'activeaccount/account_already_active.html')
+    #         elif not generate_token.check_token(user, token):
+    #             return render(request, 'activeaccount/account_already_active.html')
 
-            else:
-                return render(request, 'activeaccount/activate_failed.html')
+    #         else:
+    #             return render(request, 'activeaccount/activate_failed.html')
 
     def login(request):
         if request.user.is_authenticated:

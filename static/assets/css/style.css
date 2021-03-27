@@ -1,39 +1,3 @@
-/*-----------------------------------------------------------------------------------
-
-    Template Name: Appro - App landing Page html5 template 
-    Template URI: http://themesvila.com
-    Description: This is html5 template
-    Author: Theme Rocks
-    Author URI: http://themesvila.com
-    Version: 1.0
-
------------------------------------------------------------------------------------
-    
-    CSS INDEX
-    ===================
-
------------------------------------------------------------------------------------*/
-
-/*----------------------------------------
-	1.  Theme default CSS
-	2.  MENU DESIGN DESIGN
-	3.  SLIDER DESIGN
-	4.  SECTION HEADING
-	5.  ABOUT DESIGN
-	6.  COLL TO ACTION
-	7.  FEATURES DESIGN
-	8.  SCREENSHOTS DESIGN
-	9.  PROMO DESIGN
-	10. PRICING TABLE DESIGN
-	11. VIDEO DESIGN
-	12. APP-REVIEW DESIGN
-	13. BLOG DESIGN
-	14. FAQ DESIGN
-	15. CONACT DESIGN
-	16. FOOTER DESIGN
-	
-----------------------------------------*/
-
 body{
 	font-family: 'Open Sans' , sans-serif;
 	font-size: 15px;
@@ -78,7 +42,7 @@ p{
 /* Preloader*/
 
 .preloader {
-	background: linear-gradient(to right, #00c9fd , #81ee8e);
+	background: linear-gradient(to right, #6a8d9b , #d3bf9f);
     bottom: 0;
     left: 0;
     position: fixed;
@@ -178,8 +142,8 @@ p{
 	text-transform: uppercase;
 }
 .navbar-default.menu-shrink{
-	background: -webkit-linear-gradient(to right, #00c9fd , #81ee8e);  /* Chrome 10-25, Safari 5.1-6 */
-	background: linear-gradient(to right, #00c9fd , #81ee8e); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+	background: -webkit-linear-gradient(to right, #6a8d9b , #d3bf9f);  /* Chrome 10-25, Safari 5.1-6 */
+	background: linear-gradient(to right, #6a8d9b , #d3bf9f); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 	box-shadow: 0 0 20px -10px rgba(0,0,0,0.8)	;
     padding: 10px 0;
     width: 100%;
@@ -196,28 +160,15 @@ p{
 .navbar-default .navbar-toggle:hover,
 .navbar-default .navbar-toggle:focus { background-color: #fff }
 .navbar-default .navbar-toggle .icon-bar { background-color: #75ceae }
-
-/*
-* ----------------------------------------------------------------------------------------
-* 02. END MENU DESIGN DESIGN
-* ----------------------------------------------------------------------------------------
-*/
-
-
-/*
-* ----------------------------------------------------------------------------------------
-* 03. START SLIDER DESIGN
-* ----------------------------------------------------------------------------------------
-*/
 .welcome-area{
-	background-image: -webkit-linear-gradient(to right, #00c9fd , #81ee8e);  /* Chrome 10-25, Safari 5.1-6 */
-	background-image: linear-gradient(to right, #00c9fd , #81ee8e); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+	background-image: -webkit-linear-gradient(to right, #6a8d9b , #d3bf9f);  /* Chrome 10-25, Safari 5.1-6 */
+	background-image: linear-gradient(to right, #6a8d9b , #d3bf9f); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 	position: relative;
 	
 }
 .bg_image:before{
-	background-image: -webkit-linear-gradient(to right, #00c9fd , #81ee8e);
-	background-image: linear-gradient(to right, #00c9fd , #81ee8e);
+	background-image: -webkit-linear-gradient(to right, #6a8d9b , #d3bf9f);
+	background-image: linear-gradient(to right, #6a8d9b , #d3bf9f);
 	position: absolute;
 	width: 100%;
 	height: 100%;
@@ -279,7 +230,7 @@ p{
 	display: inline-block;
 	text-align: center;
 	background: #fff;
-	color: #00c9fd;
+	color: #6a8d9b;
 	font-size: 13px;
 	width: 45px;
 	height: 45px;
@@ -339,7 +290,7 @@ p{
 .app_store{
 	border: 1px solid #fff;
     background: #fff;
-    color: #00c9fd;
+    color: #6a8d9b;
     padding: 15px 32px;
     border-radius: 30px;
     font-size: 14px;
@@ -364,10 +315,10 @@ p{
 }
 
 .appbutton{
-	border: 1px solid #81ee8e;
+	border: 1px solid #d3bf9f;
 	background: #fff;
-	background: -webkit-linear-gradient(to right, #00c9fd , #81ee8e);  /* Chrome 10-25, Safari 5.1-6 */
-	background: linear-gradient(to right, #00c9fd , #81ee8e); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+	background: -webkit-linear-gradient(to right, #6a8d9b , #d3bf9f);  /* Chrome 10-25, Safari 5.1-6 */
+	background: linear-gradient(to right, #6a8d9b , #d3bf9f); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 	
 	color: #ffff;
 	padding: 13px 32px;
@@ -381,9 +332,9 @@ p{
 
 .appbutton:hover,
 .appbutton:focus{
-	border-color: #81ee8e;
+	border-color: #d3bf9f;
 	background: #fff;
-	color: #81ee8e;
+	color: #d3bf9f;
 	text-decoration: none;
 }
 
@@ -466,8 +417,6 @@ p{
 	height: 70px;
 	line-height: 83px;
 	color: #fff;
-	border-radius: 50%;
-	box-shadow: 0 0 15px rgba(0,0,0,0.0999);
 	float: left;
 	text-align: center;
 }
@@ -503,8 +452,8 @@ p{
 	 background-image: linear-gradient(135deg,#ef4368,#f2708c);
 }
 .blue{
-	background: -webkit-linear-gradient(to right, #00c9fd , #81ee8e);  /* Chrome 10-25, Safari 5.1-6 */
-	background: linear-gradient(to right, #00c9fd , #81ee8e); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+	background: -webkit-linear-gradient(to right, #6a8d9b , #d3bf9f);  /* Chrome 10-25, Safari 5.1-6 */
+	background: linear-gradient(to right, #6a8d9b , #d3bf9f); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 
 }
 
@@ -529,7 +478,7 @@ p{
 	padding-top: 20px;
 }
 .cl_title{
-	color: #00c9fd;
+	color: #6a8d9b;
 	font-weight: 600;
 	font-size: 17px;
 	margin-bottom: 10px;
@@ -575,7 +524,7 @@ p{
 	
 }
 .single_feature:hover{
-	background-image:url(../images/service-bg.jpg);
+	/* background-image:url(/static/img/home/service-bg.jpg); */
 	background-color: #333 ;
 	background-size: cover;
 	color: #fff;
@@ -589,7 +538,7 @@ p{
 }
 
 .single_feature .border_line{
-	background: #00c9fd;
+	background: #6a8d9b;
 	width: 40px;
 	height: 1px;
 	text-align: center;
@@ -600,7 +549,7 @@ p{
 	margin-bottom: 18px;
 	margin-right: 18px;
 	display: inline-block;
-	color: #00c9fd;
+	color: #6a8d9b;
 	text-align: center;
 }
 .feature_icon i{
@@ -652,11 +601,11 @@ p{
 }
 
 .app_screens_slider .slick-dots li button::before{
-	color: #00c9fd;
+	color: #6a8d9b;
 	width: 7px;
 	height: 7px;
-	border: 1px solid #81ee8e;
-	background: #00c9fd;
+	border: 1px solid #d3bf9f;
+	background: #6a8d9b;
 	color: transparent;
 	border-radius: 50%;	
 	opacity: 1;
@@ -664,9 +613,9 @@ p{
 .app_screens_slider .slick-dots li.slick-active button::before{
 	width: 11px;
 	height: 11px;	
-	background: -webkit-linear-gradient(to right, #00c9fd , #81ee8e);  /* Chrome 10-25, Safari 5.1-6 */
-	background: linear-gradient(to right, #00c9fd , #81ee8e); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-	box-shadow: 0 0 8px #81ee8e;
+	background: -webkit-linear-gradient(to right, #6a8d9b , #d3bf9f);  /* Chrome 10-25, Safari 5.1-6 */
+	background: linear-gradient(to right, #6a8d9b , #d3bf9f); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+	box-shadow: 0 0 8px #d3bf9f;
 	margin-top: -2px;
 }
 .app_screens_slider .slick-dots li{
@@ -677,8 +626,8 @@ p{
 .review_slider .owl-next,
 .app_screens_slider .slick-prev,
 .app_screens_slider .slick-next{
-	background: -webkit-linear-gradient(to right, #00c9fd , #81ee8e);  /* Chrome 10-25, Safari 5.1-6 */
-	background: linear-gradient(to right, #00c9fd , #81ee8e); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+	background: -webkit-linear-gradient(to right, #6a8d9b , #d3bf9f);  /* Chrome 10-25, Safari 5.1-6 */
+	background: linear-gradient(to right, #6a8d9b , #d3bf9f); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 	color: #fff;
 	width: 45px;
 	height: 45px;
@@ -725,14 +674,14 @@ p{
 	margin-top: 30px;
 }
 .single_promo .promo_icon{
-	border: 1px solid #81ee8e;
+	border: 1px solid #d3bf9f;
 	font-size: 30px;
 	margin-right: 30px;
 	display: inline-block;
 	width: 70px;
 	height: 70px;
 	line-height: 70px;
-	color: #81ee8e;
+	color: #d3bf9f;
 	border-radius: 50%;
 	box-shadow: 5px 5px 15px rgba(0,0,0,0.077);
 	float: left;
@@ -740,9 +689,9 @@ p{
 	transition: .5s;
 }
 .single_promo:hover .promo_icon{
-	background: -webkit-linear-gradient(to right, #00c9fd , #81ee8e);  /* Chrome 10-25, Safari 5.1-6 */
-	background: linear-gradient(to right, #00c9fd , #81ee8e); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-	border-color: #81ee8e;
+	background: -webkit-linear-gradient(to right, #6a8d9b , #d3bf9f);  /* Chrome 10-25, Safari 5.1-6 */
+	background: linear-gradient(to right, #6a8d9b , #d3bf9f); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+	border-color: #d3bf9f;
 	color: #fff;
 }
 .single_promo .promo_details{
@@ -785,8 +734,8 @@ p{
 .pricingTable .price{
 	margin: 0px 0 15px;
 	overflow: hidden;
-	background: -webkit-linear-gradient(to right, #00c9fd , #81ee8e);  /* Chrome 10-25, Safari 5.1-6 */
-	background: linear-gradient(to right, #00c9fd , #81ee8e); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+	background: -webkit-linear-gradient(to right, #6a8d9b , #d3bf9f);  /* Chrome 10-25, Safari 5.1-6 */
+	background: linear-gradient(to right, #6a8d9b , #d3bf9f); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 	color: #fff;
 	padding: 30px;
 }
@@ -802,7 +751,7 @@ p{
 
 .pricingTable .price-value{
     font-size: 40px;
-    color: #00c9fd;
+    color: #6a8d9b;
 	font-weight: 700;
 	margin: 0px 0;
 	display: inline-block;
@@ -831,7 +780,7 @@ p{
 }
 .pricingTable .pricingContent ul li i{
     margin: 0 10px 0 0;
-    color: #00c9fd;
+    color: #6a8d9b;
 }
 
 
@@ -946,7 +895,7 @@ img{
     margin: 20px 0 5px;
     text-transform: uppercase;
 	letter-spacing: 2px;
-	color: #00c9fd;
+	color: #6a8d9b;
 	font-weight: 400;
 }
 .testimonial .post{
@@ -1009,8 +958,8 @@ img{
 .post_date{
 	position: absolute;
 	bottom: 0;
-	background: -webkit-linear-gradient(to right, #00c9fd , #81ee8e);  /* Chrome 10-25, Safari 5.1-6 */
-	background: linear-gradient(to right, #00c9fd , #81ee8e); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+	background: -webkit-linear-gradient(to right, #6a8d9b , #d3bf9f);  /* Chrome 10-25, Safari 5.1-6 */
+	background: linear-gradient(to right, #6a8d9b , #d3bf9f); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 	padding: 8px 15px;	
 	color: #fff;
 	margin: 20px;
@@ -1029,7 +978,7 @@ img{
 }
 .single_blog h4 a:hover,
 .single_blog h4 a:focus{
-	color: #00c9fd;
+	color: #6a8d9b;
 }
 .blog_post_content{
 	padding: 0 20px 5px;
@@ -1043,7 +992,7 @@ img{
 }
 .blog_info a:hover,
 .blog_info a:focus{
-	color: #00c9fd;
+	color: #6a8d9b;
 }
 .blog_info li{
 	padding: 4px 15px;
@@ -1053,11 +1002,11 @@ img{
 	margin-bottom: 10px;
 	border-radius: 30px;
 	text-align: center;
-	color: #00c9fd;	
+	color: #6a8d9b;	
 	font-size: 12px;
 }
 .blog_info i{
-	color: #00c9fd;
+	color: #6a8d9b;
 	padding-right: 2px;
 }
 
@@ -1094,7 +1043,7 @@ img{
 
 #accordion .panel-title a{
     color:#fff;
-	background: linear-gradient(to right, #00c9fd , #81ee8e);
+	background: linear-gradient(to right, #6a8d9b , #d3bf9f);
     display: block;
     padding: 18px 10px 18px 65px;
 }
@@ -1111,7 +1060,7 @@ img{
 	position: absolute;
 	top: 10px;
 	left: 10px;
-	color: #00c9fd;
+	color: #6a8d9b;
 	background: #fff;
 	height: 36px;
 	width: 36px;
@@ -1122,7 +1071,7 @@ img{
 }
 #accordion .panel-title a.collapsed:before{
     content: "\e61a";
-	background: linear-gradient(to right, #00c9fd , #81ee8e);
+	background: linear-gradient(to right, #6a8d9b , #d3bf9f);
 	color: #fff;
 
 }
@@ -1170,7 +1119,7 @@ img{
 	border-radius: 4px;
 }
 .form-control:focus{
-	border-color: #00c9fd;
+	border-color: #6a8d9b;
 	box-shadow: inherit;
 }
 .contact_form textarea{
@@ -1202,8 +1151,8 @@ img{
 */
 
 #footer{
-	background: -webkit-linear-gradient(to right, #00c9fd , #81ee8e);  /* Chrome 10-25, Safari 5.1-6 */
-	background: linear-gradient(to right, #00c9fd , #81ee8e); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+	background: -webkit-linear-gradient(to right, #6a8d9b , #d3bf9f);  /* Chrome 10-25, Safari 5.1-6 */
+	background: linear-gradient(to right, #6a8d9b , #d3bf9f); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 	padding: 60px 0;
 	color: #fff;
 }
@@ -1238,8 +1187,8 @@ img{
 }
 .smain_form .btn.btn-default {
 	color: #333;
-	background: -webkit-linear-gradient(to right, #00c9fd , #81ee8e);  /* Chrome 10-25, Safari 5.1-6 */
-	background: linear-gradient(to right, #00c9fd , #81ee8e); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+	background: -webkit-linear-gradient(to right, #6a8d9b , #d3bf9f);  /* Chrome 10-25, Safari 5.1-6 */
+	background: linear-gradient(to right, #6a8d9b , #d3bf9f); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 	color: #ffff;
 	height: 50px;
 	width: 50px;
@@ -1270,7 +1219,7 @@ img{
 }
 .social_link a:hover{
 	background: #fff;
-	color: #00c9fd;
+	color: #6a8d9b;
 	
 }
 .copyrigt_text p{

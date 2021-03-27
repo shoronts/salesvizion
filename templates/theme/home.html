@@ -1,91 +1,25 @@
 {% extends 'base.html' %}
 {% load static %}
 {% block title %}Home{% endblock %}
+{% block css %}
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css" integrity="sha384-SZXxX4whJ79/gErwcOYf+zWLeJdY/qpuqC4cAa9rOGUstPomtqpuNWT9wdPEn2fk" crossorigin="anonymous">
+{% endblock %}
 {% block content %}
 <section id="slider_area" class="welcome-area">
   <div id="particles-js"></div>
-  <div class="slider_active owl-carousel">
-    <div class="single-slide-item">
-      <div class="single-slide-item-table">
-        <div class="single-slide-item-tablecell">
-          <div class="container">
-            <div class="row">
-              <div class="col-md-7 col-sm-12">
-                <div class="single_slide_text">
-                  <h1 class="slider_title animated">Perfect Landing Page For Your Awesome App</h1>
-                  <p class="slider_subtitle animated">There are many variations of passages of Lorem Ipsum available,
-                    but the majority have suffered alteration in some form, by injected humour, or randomised words
-                    which.</p>
-                  <div class="slider_btn animated">
-                    <a href="#" class="btn btn-default google_play"><i class="fa fa-android"></i> Google
-                      Play</a>
-                    <a href="#" class="btn btn-default app_store"><i class="fa fa-apple"></i> App Store</a>
-                  </div>
-                </div>
-              </div>
-              <div class="col-md-5 text-center hidden-sm hidden-xs">
-                <div class="slider_image animated">
-                  <img src="{% static 'assets/images/slider/slider-1.png' %}" alt="" />
-                </div>
-              </div>
-            </div>
-          </div>
+  <div class="container">
+    <div class="row" style="padding-top: 150px;">
+      <div class="col-md-7 col-sm-12">
+        <div class="single_slide_text">
+          <h1 class="slider_title animated">SalesVizion creates and maps a clear Vizion for your sales opportunities. </h1>
+          <p class="slider_subtitle animated">By graphically aligning your customers Key Business Initiatives as directed by the CEO to the business challenges experienced and the people/process/technology needed to acquire to achieve them.  
+            <br>Your product is a key enabler, let us show you how. 
+            </p>
         </div>
       </div>
-    </div>
-    <div class="single-slide-item">
-      <div class="single-slide-item-table">
-        <div class="single-slide-item-tablecell">
-          <div class="container">
-            <div class="row">
-              <div class="col-md-7 col-sm-12">
-                <div class="single_slide_text">
-                  <h1 class="slider_title animated">Perfect Landing Page For Your Awesome App</h1>
-                  <p class="slider_subtitle animated">There are many variations of passages of Lorem Ipsum available,
-                    but the majority have suffered alteration in some form, by injected humour, or randomised words
-                    which.</p>
-                  <div class="slider_btn animated">
-                    <a href="#" class="btn btn-default google_play"><i class="fa fa-android"></i> Google
-                      Play</a>
-                    <a href="#" class="btn btn-default app_store"><i class="fa fa-apple"></i> App Store</a>
-                  </div>
-                </div>
-              </div>
-              <div class="col-md-5 text-center hidden-sm hidden-xs">
-                <div class="slider_image animated">
-                  <img src="{% static 'assets/images/slider/slider-1.png' %}" alt="" />
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="single-slide-item">
-      <div class="single-slide-item-table">
-        <div class="single-slide-item-tablecell">
-          <div class="container">
-            <div class="row">
-              <div class="col-md-7 col-sm-12">
-                <div class="single_slide_text">
-                  <h1 class="slider_title animated">Perfect Landing Page For Your Awesome App</h1>
-                  <p class="slider_subtitle animated">There are many variations of passages of Lorem Ipsum available,
-                    but the majority have suffered alteration in some form, by injected humour, or randomised words
-                    which.</p>
-                  <div class="slider_btn animated">
-                    <a href="#" class="btn btn-default google_play"><i class="fa fa-android"></i> Google
-                      Play</a>
-                    <a href="#" class="btn btn-default app_store"><i class="fa fa-apple"></i> App Store</a>
-                  </div>
-                </div>
-              </div>
-              <div class="col-md-5 text-center hidden-sm hidden-xs">
-                <div class="slider_image animated">
-                  <img src="{% static 'assets/images/slider/slider-1.png' %}" alt="" />
-                </div>
-              </div>
-            </div>
-          </div>
+      <div class="col-md-5 text-center hidden-sm hidden-xs">
+        <div class="slider_image animated">
+          <img src="{% static 'img/home/firstSection.png' %}" alt="" />
         </div>
       </div>
     </div>
@@ -96,37 +30,37 @@
     <div class="row">
       <div class="col-md-4 col-sm-6">
         <div class="single_about">
-          <div class="about_icon blue">
-            <i class="ti-vector"></i>
+          <div class="about_icon">
+            <img src="{% static 'img/home/aboutico1.png' %}" alt="">
           </div>
           <div class="sing_about_text">
             <i class="ti-vector"></i>
-            <h3>Awesome Design</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Porro reprehenderit</p>
+            <h3>Vizualize your Opportunity</h3>
+            <p>See your account  opportunity like never before</p>
           </div>
         </div>
       </div>
       <div class="col-md-4 col-sm-6">
         <div class="single_about">
-          <div class="about_icon blue">
-            <i class="ti-settings"></i>
+          <div class="about_icon">
+            <img src="{% static 'img/home/aboutico2.png' %}" alt="">
           </div>
           <div class="sing_about_text">
             <i class="ti-settings"></i>
-            <h3>Easy To Use</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Porro reprehenderit</p>
+            <h3>Map your solution</h3>
+            <p>Create an understanding of the value your product</p>
           </div>
         </div>
       </div>
       <div class="col-md-4 col-sm-6">
         <div class="single_about">
-          <div class="about_icon blue">
-            <i class="ti-headphone-alt"></i>
+          <div class="about_icon">
+            <img src="{% static 'img/home/aboutico3.png' %}" alt="">
           </div>
           <div class="sing_about_text">
             <i class="ti-headphone-alt"></i>
-            <h3>24/7 Support</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Porro reprehenderit</p>
+            <h3>Align to Key Business Initiatives</h3>
+            <p>Document your solution and prove the value it provides</p>
           </div>
         </div>
       </div>
@@ -138,25 +72,16 @@
 <section id="coll_action_section" class="section_padding gray_section">
   <div class="container">
     <div class="row">
-      <div class="col-md-6 col-sm-12">
+      <div class="col-md-5 col-sm-12">
         <div class="coll_action_text">
-          <span class="cl_title">Get our App</span>
-          <h3>Our App is Available</h3>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-            Pellentesque pharetra ullamcorper luctus. Aliquam ut risus
-            venenatis, dapibus ante vel, ornare magna. Morbi erat leo,
-            ornare id commodo</p>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-            Pellentesque pharetra ullamcorper luctus. Aliquam ut risus
-            venenatis, dapibus ante vel, ornare magna.</p>
-          <div class="coll_action_btn">
-            <a href="#" class="appbutton"><i class="fa fa-apple"></i> App Store</a>
-            <a href="#" class="appbutton"><i class="fa fa-android"></i> Play Store</a>
-          </div>
+          <span class="cl_title">Get a Vizion</span>
+          <h3>When you see what’s the value, you’ll win every time. </h3>
+          <p>When you order a Vizion you will have everything you need to articulate the value proposition your customer is asking for from you.</p>
+          <p>By visually aligning your customers Key Business Initiatives as directed by the CEO to the business challenges experienced and the people/process/technology needed to acquire to achieve them. </p>
         </div>
       </div>
-      <div class="col-md-6 col-sm-12 hidden-xs">
-        <img src="{% static 'assets/images/download.png' %}" class="img-responsive" alt="Download Image">
+      <div class="col-md-7 col-sm-12 hidden-xs">
+        <img src="{% static 'img/home/homeSec3.png' %}" class="img-responsive" alt="Download Image">
       </div>
     </div>
   </div>
@@ -167,16 +92,16 @@
   <div class="container">
     <div class="section_heading text-center">
       <h2>Awesome Features</h2>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque<br> pharetra ullamcorper luctus</p>
+      <p>We call this a Vizion.  A Vizion is an output via a web-based application that you can engage with to create, refine, and share your value proposition with your customer, your team, and your management. </p>
     </div>
     <div class="row">
       <div class="col-md-4 col-sm-6">
         <div class="single_feature">
           <div class="feature_icon">
-            <i class="ti-vector"></i>
+            <i class="fas fa-route"></i>
           </div>
           <div class="sing_feature_text">
-            <h3>Awesome Design</h3>
+            <h3>Vizualize</h3>
             <div class="border_line"></div>
             <p>
               Lorem Ipsum is simply dummy text of the printing
@@ -189,10 +114,10 @@
       <div class="col-md-4 col-sm-6">
         <div class="single_feature">
           <div class="feature_icon">
-            <i class="ti-settings"></i>
+            <i class="fas fa-mountain"></i>
           </div>
           <div class="sing_feature_text">
-            <h3>Easy To Use</h3>
+            <h3>Map</h3>
             <div class="border_line"></div>
             <p>
               Lorem Ipsum is simply dummy text of the printing
@@ -205,10 +130,10 @@
       <div class="col-md-4 col-sm-6">
         <div class="single_feature">
           <div class="feature_icon">
-            <i class="ti-mobile"></i>
+            <i class="fas fa-atlas"></i>
           </div>
           <div class="sing_feature_text">
-            <h3>Responsive Design</h3>
+            <h3>Align</h3>
             <div class="border_line"></div>
             <p>
               Lorem Ipsum is simply dummy text of the printing
@@ -221,10 +146,10 @@
       <div class="col-md-4 col-sm-6">
         <div class="single_feature">
           <div class="feature_icon">
-            <i class="ti-bell"></i>
+            <i class="fas fa-map-pin"></i>
           </div>
           <div class="sing_feature_text">
-            <h3>Update Notification</h3>
+            <h3>Use for QBR</h3>
             <div class="border_line"></div>
             <p>
               Lorem Ipsum is simply dummy text of the printing
@@ -237,10 +162,10 @@
       <div class="col-md-4 col-sm-6">
         <div class="single_feature">
           <div class="feature_icon">
-            <i class="ti-zip"></i>
+            <i class="fas fa-map-marked-alt"></i>
           </div>
           <div class="sing_feature_text">
-            <h3>Fress Code</h3>
+            <h3>Align to Key Decision Makers</h3>
             <div class="border_line"></div>
             <p>
               Lorem Ipsum is simply dummy text of the printing
@@ -253,10 +178,10 @@
       <div class="col-md-4 col-sm-6">
         <div class="single_feature">
           <div class="feature_icon">
-            <i class="ti-headphone-alt"></i>
+            <i class="fas fa-binoculars"></i>
           </div>
           <div class="sing_feature_text">
-            <h3>24/7 Support</h3>
+            <h3>Quantifi Value</h3>
             <div class="border_line"></div>
             <p>
               Lorem Ipsum is simply dummy text of the printing
@@ -272,30 +197,27 @@
 <section id="screenshots" class="section_padding gray_section">
   <div class="container">
     <div class="section_heading text-center">
-      <h2>App Screenshots</h2>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque<br> pharetra ullamcorper luctus</p>
+      <h2>Vizion Examples...</h2>
+      <p>A Vizion is a graphical representation of your opportunity and will <br>give you a unique insight into your customer’s objective and how your product can enable them.</p>
     </div>
     <div class="app_screens_slider">
       <div class="single_screenshot">
-        <img src="{% static 'assets/images/screenshots/1.jpg' %}" alt="" />
+        <img src="{% static 'img/home/VizionExamples/first.png' %}" alt="" />
       </div>
       <div class="single_screenshot">
-        <img src="{% static 'assets/images/screenshots/2.jpg' %}" alt="" />
+        <img src="{% static 'img/home/VizionExamples/second.png' %}" alt="" />
       </div>
       <div class="single_screenshot">
-        <img src="{% static 'assets/images/screenshots/3.jpg' %}" alt="" />
+        <img src="{% static 'img/home/VizionExamples/third.png' %}" alt="" />
       </div>
       <div class="single_screenshot">
-        <img src="{% static 'assets/images/screenshots/4.jpg' %}" alt="" />
+        <img src="{% static 'img/home/VizionExamples/third.png' %}" alt="" />
       </div>
       <div class="single_screenshot">
-        <img src="{% static 'assets/images/screenshots/5.jpg' %}" alt="" />
+        <img src="{% static 'img/home/VizionExamples/third.png' %}" alt="" />
       </div>
       <div class="single_screenshot">
-        <img src="{% static 'assets/images/screenshots/1.jpg' %}" alt="" />
-      </div>
-      <div class="single_screenshot">
-        <img src="{% static 'assets/images/screenshots/2.jpg' %}" alt="" />
+        <img src="{% static 'img/home/VizionExamples/third.png' %}" alt="" />
       </div>
     </div>
   </div>
@@ -306,7 +228,7 @@
   <div class="container">
     <div class="section_heading text-center">
       <h2>How it works</h2>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque<br> pharetra ullamcorper luctus</p>
+      <p>A Vizion will be created for you by filling in the questionnaire and then populating your key stakeholders.</p>
     </div>
     <div class="row">
       <div class="col-md-6 col-sm-12 hidden-xs text-center">
@@ -320,7 +242,7 @@
             <i class="ti-mobile"></i>
           </div>
           <div class="promo_details">
-            <h3>Clean and Modern Design</h3>
+            <h3>Fill in the Questionnaire</h3>
             <p>
               Anim pariatur cliche reprehenderit,
               enim eiusmod high life accusamus terry
@@ -335,7 +257,7 @@
             <i class="ti-target"></i>
           </div>
           <div class="promo_details">
-            <h3>Smoth Transition</h3>
+            <h3>ID your key stakeholders</h3>
             <p>
               Anim pariatur cliche reprehenderit,
               enim eiusmod high life accusamus terry
@@ -350,7 +272,7 @@
             <i class="ti-user"></i>
           </div>
           <div class="promo_details">
-            <h3>User Friendly</h3>
+            <h3>Output will be a detailed Vizion</h3>
             <p>
               Anim pariatur cliche reprehenderit,
               enim eiusmod high life accusamus terry
@@ -368,22 +290,19 @@
   <div class="container">
     <div class="section_heading text-center">
       <h2>Pricing Table</h2>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque<br> pharetra ullamcorper luctus</p>
+      <p>There are 3 options for becoming a member of SalesVizion.</p>
     </div>
     <div class="row">
       <div class="col-md-3 col-sm-6">
         <div class="pricingTable">
           <div class="price">
             <h3 class="heading">Standard</h3>
-            <span class="price-value">$100</span>
-            <span class="month">monthly</span>
+            <span class="price-value">$49</span>
+            <!-- <span class="month">monthly</span> -->
           </div>
           <div class="pricingContent">
             <ul>
-              <li><i class="ti-check"></i> 50GB Disk Space</li>
-              <li><i class="ti-check"></i> 50 Email Accounts</li>
-              <li><i class="ti-check"></i> 10 subdomains</li>
-              <li><i class="ti-check"></i> 15 Domains</li>
+              <li><i class="ti-check"></i> Single Vizion</li><br>
             </ul>
           </div>
           <div class="pricingTable-signup">
@@ -395,15 +314,12 @@
         <div class="pricingTable">
           <div class="price">
             <h3 class="heading">Business</h3>
-            <span class="price-value">$150</span>
-            <span class="month">monthly</span>
+            <span class="price-value">$99</span>
+            <!-- <span class="month">monthly</span> -->
           </div>
           <div class="pricingContent">
             <ul>
-              <li><i class="ti-check"></i> 50GB Disk Space</li>
-              <li><i class="ti-check"></i> 50 Email Accounts</li>
-              <li><i class="ti-check"></i> 10 subdomains</li>
-              <li><i class="ti-check"></i> 15 Domains</li>
+              <li><i class="ti-check"></i> Single Vizion with unlimited editing / updates</li>
             </ul>
           </div>
           <div class="pricingTable-signup">
@@ -415,15 +331,12 @@
         <div class="pricingTable">
           <div class="price">
             <h3 class="heading">Premium</h3>
-            <span class="price-value">$200</span>
-            <span class="month">monthly</span>
+            <span class="price-value">$599</span>
+            <!-- <span class="month">monthly</span> -->
           </div>
           <div class="pricingContent">
             <ul>
-              <li><i class="ti-check"></i> 50GB Disk Space</li>
-              <li><i class="ti-check"></i> 50 Email Accounts</li>
-              <li><i class="ti-check"></i> 10 subdomains</li>
-              <li><i class="ti-check"></i> 15 Domains</li>
+              <li><i class="ti-check"></i> Unlimited Vizion access</li><br>
             </ul>
           </div>
           <div class="pricingTable-signup">
@@ -435,15 +348,12 @@
         <div class="pricingTable">
           <div class="price">
             <h3 class="heading">Platinum</h3>
-            <span class="price-value">$300</span>
-            <span class="month">monthly</span>
+            <span class="price-value">$999</span>
+            <!-- <span class="month">monthly</span> -->
           </div>
           <div class="pricingContent">
             <ul>
-              <li><i class="ti-check"></i> 50GB Disk Space</li>
-              <li><i class="ti-check"></i> 50 Email Accounts</li>
-              <li><i class="ti-check"></i> 10 subdomains</li>
-              <li><i class="ti-check"></i> 15 Domains</li>
+              <li><i class="ti-check"></i> Become an unlimited member to SalesVizion.com</li>
             </ul>
           </div>
           <div class="pricingTable-signup">
@@ -673,8 +583,8 @@
           <div class="panel panel-default">
             <div class="panel-heading" role="tab" id="headingTwo">
               <h4 class="panel-title">
-                <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion"
-                  href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo"
+                  aria-expanded="false" aria-controls="collapseTwo">
                   How I can Install App ?
                 </a>
               </h4>
@@ -693,8 +603,8 @@
           <div class="panel panel-default">
             <div class="panel-heading" role="tab" id="headingThree">
               <h4 class="panel-title">
-                <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion"
-                  href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseThree"
+                  aria-expanded="false" aria-controls="collapseThree">
                   How I can Use?
                 </a>
               </h4>
@@ -713,8 +623,8 @@
           <div class="panel panel-default">
             <div class="panel-heading" role="tab" id="headingfour">
               <h4 class="panel-title">
-                <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion"
-                  href="#collapsefour" aria-expanded="false" aria-controls="collapsefour">
+                <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapsefour"
+                  aria-expanded="false" aria-controls="collapsefour">
                   How to Upgrade App?
                 </a>
               </h4>

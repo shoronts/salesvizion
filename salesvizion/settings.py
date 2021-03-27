@@ -2,7 +2,7 @@ import os
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'f!wh3q5%^*6&tjnbpm=f-s1d(lrj5&75@n!an#9%%6)^x44231'
 DEBUG = False
-ALLOWED_HOSTS = ['www.salesvizion.com','salesvizion.com']
+ALLOWED_HOSTS = ['www.salesvizion.com','salesvizion.com', '50.62.81.235']
 
 # Application definition
 
@@ -100,3 +100,21 @@ MEDIA_ROOT = [os.path.join(BASE_DIR, 'media')]
 
 LOGIN_REDIRECT_URL = 'profile'
 LOGIN_URL = 'login'
+
+
+#Email options by Godaddy SMTP
+EMAIL_HOST = 'a2nlvphout-v01.shr.prod.iad2.secureserver.net'
+EMAIL_PORT = 587
+EMAIL_HOST_USER = 'webmaster@salesvizion.com'
+EMAIL_HOST_PASSWORD = 'salesvizion1234'
+EMAIL_USE_TLS = True
+EMAIL_USE_SSL = False
+
+
+#Email options by gmail SMTP
+# EMAIL_HOST = 'smtp.gmail.com'
+# EMAIL_PORT = 465
+# EMAIL_HOST_USER = 'lynbrookoptical8@gmail.com'
+# EMAIL_HOST_PASSWORD = 'Shoron@007'
+# EMAIL_USE_TLS = True
+# EMAIL_USE_SSL = False
