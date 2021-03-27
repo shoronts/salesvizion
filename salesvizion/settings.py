@@ -1,8 +1,14 @@
 import os
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'f!wh3q5%^*6&tjnbpm=f-s1d(lrj5&75@n!an#9%%6)^x44231'
-DEBUG = False
-ALLOWED_HOSTS = ['www.salesvizion.com','salesvizion.com', '50.62.81.235']
+
+
+# DEBUG = False
+# ALLOWED_HOSTS = ['www.salesvizion.com','salesvizion.com', '50.62.81.235']
+
+
+DEBUG = True
+ALLOWED_HOSTS = []
 
 # Application definition
 
@@ -50,20 +56,33 @@ TEMPLATES = [
 WSGI_APPLICATION = 'salesvizion.wsgi.application'
 
 # Database
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.mysql',
+#         'OPTIONS': {
+#             'init_command': "SET sql_mode='STRICT_TRANS_TABLES'",
+#             },
+#         'NAME': 'salesvizion',
+#         'USER': 'salesvizion',
+#         'PASSWORD': 'WiuEtN!!@z34',
+#         'HOST': '127.0.0.1',
+#         'PORT': '3306'
+#     }
+# }
+
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
         'OPTIONS': {
             'init_command': "SET sql_mode='STRICT_TRANS_TABLES'",
             },
-        'NAME': 'salesvizion',
-        'USER': 'salesvizion',
-        'PASSWORD': 'WiuEtN!!@z34',
+        'NAME': 'mark',
+        'USER': 'root',
+        'PASSWORD': '',
         'HOST': '127.0.0.1',
         'PORT': '3306'
     }
 }
-
 
 # Password validation
 

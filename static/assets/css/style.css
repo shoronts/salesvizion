@@ -126,7 +126,7 @@ p{
     color: #25272b !important;
     background-color: transparent;
 }
-.navbar-brand { padding: 0px ; margin-top: 7px;}
+.navbar-brand { padding: 0px ; margin-top: 7px; width: 150px;}
 .navbar-brand img {margin-left:10px;}
 .navbar-default .navbar-collapse, .navbar-default .navbar-form {
   border-color: #fff;
