@@ -126,7 +126,7 @@ p{
     color: #25272b !important;
     background-color: transparent;
 }
-.navbar-brand { padding: 0px ; margin-top: 7px; width: 150px;}
+.navbar-brand { padding: 0px ; margin-top: 7px; width: 150px; height: 80px;}
 .navbar-brand img {margin-left:10px;}
 .navbar-default .navbar-collapse, .navbar-default .navbar-form {
   border-color: #fff;
@@ -1231,3 +1231,10 @@ img{
 * 16. END FOOTER DESIGN
 * ----------------------------------------------------------------------------------------
 */
+
+.navbar-nav {
+    margin: 7.5px -15px!important;
+}
+.navbar-toggle{
+	margin-top: 30px!important;
+}
