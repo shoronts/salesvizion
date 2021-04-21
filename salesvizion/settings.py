@@ -3,12 +3,12 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'f!wh3q5%^*6&tjnbpm=f-s1d(lrj5&75@n!an#9%%6)^x44231'
 
 
-DEBUG = False
-ALLOWED_HOSTS = ['www.salesvizion.com','salesvizion.com', '50.62.81.235']
+# DEBUG = False
+# ALLOWED_HOSTS = ['www.salesvizion.com','salesvizion.com', '50.62.81.235']
 
 
-# DEBUG = True
-# ALLOWED_HOSTS = []
+DEBUG = True
+ALLOWED_HOSTS = []
 
 # Application definition
 
@@ -23,7 +23,13 @@ INSTALLED_APPS = [
     'salesviziontheme.apps.SalesvizionthemeConfig',
     'salesvizionusers.apps.SalesvizionusersConfig',
     'salesvizionquestions.apps.SalesvizionquestionsConfig',
+    'salesvizionnews.apps.SalesvizionnewsConfig',
+    #Text Editor
+    'ckeditor',
+    'ckeditor_uploader',
 ]
+
+CKEDITOR_UPLOAD_PATH = "inTextPicture/"
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -56,33 +62,33 @@ TEMPLATES = [
 WSGI_APPLICATION = 'salesvizion.wsgi.application'
 
 # Database
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'OPTIONS': {
-            'init_command': "SET sql_mode='STRICT_TRANS_TABLES'",
-            },
-        'NAME': 'salesvizion',
-        'USER': 'salesvizion',
-        'PASSWORD': 'WiuEtN!!@z34',
-        'HOST': '127.0.0.1',
-        'PORT': '3306'
-    }
-}
-
 # DATABASES = {
 #     'default': {
 #         'ENGINE': 'django.db.backends.mysql',
 #         'OPTIONS': {
 #             'init_command': "SET sql_mode='STRICT_TRANS_TABLES'",
 #             },
-#         'NAME': 'mark',
-#         'USER': 'root',
-#         'PASSWORD': '',
+#         'NAME': 'salesvizion',
+#         'USER': 'salesvizion',
+#         'PASSWORD': 'WiuEtN!!@z34',
 #         'HOST': '127.0.0.1',
 #         'PORT': '3306'
 #     }
 # }
+
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.mysql',
+        'OPTIONS': {
+            'init_command': "SET sql_mode='STRICT_TRANS_TABLES'",
+            },
+        'NAME': 'mark',
+        'USER': 'root',
+        'PASSWORD': '',
+        'HOST': '127.0.0.1',
+        'PORT': '3306'
+    }
+}
 
 # Password validation
 
@@ -137,3 +143,19 @@ EMAIL_USE_SSL = False
 # EMAIL_HOST_PASSWORD = 'Shoron@007'
 # EMAIL_USE_TLS = True
 # EMAIL_USE_SSL = False
+
+
+# CKEditor Configuration Settings
+CKEDITOR_CONFIGS = {
+    'default': {
+        'skin': 'moono',
+        'toolbar': 'full',
+        'width': 'auto',
+        'height': 'auto',
+        # 'toolbar_Custom': [
+        #     ['Bold', 'Italic', 'Underline'],
+        #     ['NumberedList', 'BulletedList'],
+        # ],
+    }
+}
+

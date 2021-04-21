@@ -14,6 +14,8 @@
   <!-- All FOnts -->
   <link href="https://fonts.googleapis.com/css?family=Lato:400,700,900" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,500,600,700" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Economica:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
 
   <!-- Bootstrap and custom CSS -->
   <style>
@@ -65,18 +67,21 @@
           <div class="nav navbar-nav navbar-right">
             <ul class="nav navbar-nav">
               {% if user.is_authenticated %}
+              <li class="{% if request.resolver_match.url_name == 'home' %}active{% endif %}"><a href="{% url 'home' %}">Home </a></li>
               <li><a href="#about">About</a></li>
-              <li><a href="{% url 'profile' %}">Profile</a></li>
-              <li><a href="{% url 'question' %}">questions</a></li>
-              <li><a href="{% url 'results' %}">Reselts</a></li>
-              <li><a href="{% url 'contact' %}">Contact </a></li>
-              <li><a href="{% url 'logout' %}">logout </a></li>
+              <li class="{% if request.resolver_match.url_name == 'profile' %}active{% endif %}"><a href="{% url 'profile' %}">Profile</a></li>
+              <li class="{% if request.resolver_match.url_name == 'questions' %}active{% endif %}"><a href="{% url 'question' %}">questions</a></li>
+              <li class="{% if request.resolver_match.url_name == 'results' %}active{% endif %}"><a href="{% url 'results' %}">Reselts</a></li>
+              <li class="{% if request.resolver_match.url_name == 'contact' %}active{% endif %}"><a href="{% url 'contact' %}">Contact </a></li>
+              <li class="{% if request.resolver_match.url_name == 'news' %}active{% endif %}"><a href="{% url 'news' %}">News </a></li>
+              <li class="{% if request.resolver_match.url_name == 'logout' %}active{% endif %}"><a href="{% url 'logout' %}">logout </a></li>
               {% else %}
-              <li><a href="{% url 'home' %}">Home </a></li>
-              <li><a href="/#about">About</a></li>
-              <li><a href="{% url 'register' %}">Register</a></li>
-              <li><a href="{% url 'login' %}">Login</a></li>
-              <li><a href="{% url 'contact' %}">Contact </a></li>
+              <li class="{% if request.resolver_match.url_name == 'home' %}active{% endif %}"><a href="{% url 'home' %}">Home </a></li>
+              <li ><a href="/#about">About</a></li>
+              <li class="{% if request.resolver_match.url_name == 'register' %}active{% endif %}"><a href="{% url 'register' %}">Register</a></li>
+              <li class="{% if request.resolver_match.url_name == 'login' %}active{% endif %}"><a href="{% url 'login' %}">Login</a></li>
+              <li class="{% if request.resolver_match.url_name == 'contact' %}active{% endif %}"><a href="{% url 'contact' %}">Contact </a></li>
+              <li class="{% if request.resolver_match.url_name == 'news' %}active{% endif %}"><a href="{% url 'news' %}">News </a></li>
               {% endif %}
             </ul>
           </div>

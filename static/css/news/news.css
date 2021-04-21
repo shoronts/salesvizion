@@ -1,0 +1,34 @@
+.navbar-default {
+    background: -webkit-linear-gradient(to right, #6a8d9b, #d3bf9f) !important;
+    background: linear-gradient(to right, #6a8d9b, #d3bf9f) !important;
+    box-shadow: 0 0 20px -10px rgb(0 0 0 / 80%) !important;
+    padding: 10px 0 !important;
+    width: 100% !important;
+}
+
+#blog {
+    padding-top: 150px;
+    padding-bottom: 30px;
+}
+
+.blogFlex {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.single_blog {
+    width: 360px;
+}
+
+@media screen and (max-width: 1024px) {
+    .single_blog {
+        width: 455px;
+    }
+}
+
+@media screen and (max-width: 991px) {
+    .single_blog {
+        width: 100%;
+    }
+}
