@@ -5,4 +5,4 @@ sqlparse==0.4.1
 django-ckeditor==6.0.0
 pillow==8.1.2
 
-# wget --no-check-certificate 'https://docs.google.com/uc?export=download&id=1xgoFfqu4PmGePCQtHRcTkG8zdF_JWVr3' -O static.zip
+# wget --no-check-certificate 'https://docs.google.com/uc?export=download&id=1xgoFfqu4PmGePCQtHRcTkG8zdF_JWVr' -O static.zip
